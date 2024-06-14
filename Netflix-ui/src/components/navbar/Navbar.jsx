@@ -1,5 +1,10 @@
 import "./navbar.scss";
-import Netflix from "../../../public/images/Netflix.jpeg";
+import Netflix from "../../assets/logo_Netflix.png";
+import { FaSearch } from "react-icons/fa";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import Profile_PiC from "../../assets/Profile_PiC.jpeg";
+import { IoIosArrowDropdownCircle } from "react-icons/io";
+
 const Navbar = () => {
   return (
     <div className="navbar">
@@ -12,7 +17,14 @@ const Navbar = () => {
           <span>New and Popular</span>
           <span>My list</span>
         </div>
-        <div className="right"></div>
+        <div className="right">
+          <IoMdNotificationsOutline />
+          <FaSearch />
+          <span>KID</span>
+          <IoMdNotificationsOutline />
+          <img src={Profile_PiC} alt="" />
+          <IoIosArrowDropdownCircle />
+        </div>
       </div>
     </div>
   );
