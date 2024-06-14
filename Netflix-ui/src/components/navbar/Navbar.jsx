@@ -6,6 +6,7 @@ const Navbar = () => {
       <div className="container">
         <div className="left">
           <img src={Netflix} alt="" />
+          <span>HomePage</span>
           <span>Series</span>
           <span>Movies</span>
           <span>New and Popular</span>
