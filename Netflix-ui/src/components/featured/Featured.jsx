@@ -1,7 +1,7 @@
 import "./feature.scss";
 import { FaPlay } from "react-icons/fa";
 import { CiCircleInfo } from "react-icons/ci";
-import Profile_PiC from "../../assets/Profile_PiC.jpeg";
+import Profile_PiC from "../../assets/Profile_PiC.jpg";
 import Random from "../../assets/Random.jpg";
 function Featured() {
   return (
@@ -25,7 +25,7 @@ function Featured() {
             <FaPlay />
             <span>Play</span>
           </button>
-          <button className="More Info">
+          <button className="more">
             <CiCircleInfo />
             <span>Info</span>
           </button>
