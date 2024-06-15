@@ -4,10 +4,20 @@ import { FaSearch } from "react-icons/fa";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import Profile_PiC from "../../assets/Profile_PiC.jpeg";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isScroled, setIsScrolled] = useState(false);
+  window.onscroll = () => {
+    setIsScrolled(window.pageYOffset === 0 ? false : true);
+    return () => (window.onscroll = null);
+  };
+
+  console.log(isScroled);
+
   return (
-    <div className="navbar">
+    <div className={isScroled ? "navbar scrolled" : "navbar"}>
+      {/* <div className="navbar"> */}
       <div className="container">
         <div className="left">
           <img src={Netflix} alt="" />
@@ -26,12 +36,13 @@ const Navbar = () => {
             <IoIosArrowDropdownCircle className="icon" />
             <div className="options">
               <span>Settings</span>
-              <span>Log Out</span>
+              <span>Logout</span>
             </div>
           </div>
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 
