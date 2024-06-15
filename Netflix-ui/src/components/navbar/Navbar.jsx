@@ -18,12 +18,17 @@ const Navbar = () => {
           <span>My list</span>
         </div>
         <div className="right">
-          <IoMdNotificationsOutline />
-          <FaSearch />
+          <FaSearch className="icon" />
           <span>KID</span>
-          <IoMdNotificationsOutline />
+          <IoMdNotificationsOutline className="icon" />
           <img src={Profile_PiC} alt="" />
-          <IoIosArrowDropdownCircle />
+          <div className="profile">
+            <IoIosArrowDropdownCircle className="icon" />
+            <div className="options">
+              <span>Settings</span>
+              <span>Log Out</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
