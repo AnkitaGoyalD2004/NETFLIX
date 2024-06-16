@@ -29,7 +29,7 @@ function Featured({ type }) {
       )}
       <img src={Profile_PiC} alt="" />
       <div className="info">
-        <img src={Random} alt="" />
+        {/* <img src={Random} alt="" /> */}
         <span className="desc">
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
