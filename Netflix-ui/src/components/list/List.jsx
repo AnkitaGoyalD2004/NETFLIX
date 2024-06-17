@@ -8,7 +8,7 @@ function List() {
     <div className="list">
       <span className="listTitle">Continue to watch</span>
       <div className="wrapper">
-        <IoIosArrowBack />
+        <IoIosArrowBack className="sliderArrow left" />
         <div className="container">
           <ListItem />
           <ListItem />
@@ -18,7 +18,7 @@ function List() {
           <ListItem />
           <ListItem />
         </div>
-        <IoIosArrowForward />
+        <IoIosArrowForward className="sliderArrow right" />
       </div>
     </div>
   );
