@@ -3,6 +3,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import ListItem from "../listItem/listItem.jsx";
 import { useRef } from "react";
+import React from "react";
 
 function List() {
   const listRef = useRef();
@@ -10,6 +11,9 @@ function List() {
     let distance = listRef.current.getBoundingClientRect().x - 50;
     if (direction === " left") {
       listRef.current.style.transform = `translateX(${230 + distance}px)`;
+    }
+    if (direction === " right") {
+      listRef.current.style.transform = `translateX(${-230 + distance}px)`;
     }
   };
 
@@ -22,6 +26,12 @@ function List() {
           onClick={() => handleClick("left")}
         />
         <div className="container" ref={listRef}>
+          <ListItem />
+          <ListItem />
+          <ListItem />
+          <ListItem />
+          <ListItem />
+          <ListItem />
           <ListItem />
           <ListItem />
           <ListItem />
