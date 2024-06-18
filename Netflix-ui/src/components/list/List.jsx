@@ -2,17 +2,23 @@ import "./list.scss";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import ListItem from "../listItem/listItem.jsx";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import React from "react";
 
 function List() {
-  const listRef = useRef();
+  const [slideNumber, setSlideNumber] = useState(0);
+
+  const listRef = useRef(null);
   const handleClick = (direction) => {
     let distance = listRef.current.getBoundingClientRect().x - 50;
-    if (direction === " left") {
+
+    if (direction === " left" && slideNumber > 0) {
+      setSlideNumber(slideNumber - 1);
+      console.log(slideNumber);
       listRef.current.style.transform = `translateX(${230 + distance}px)`;
     }
-    if (direction === " right") {
+    if (direction === " right" && slideNumber > 5) {
+      setSlideNumber(slideNumber + 1);
       listRef.current.style.transform = `translateX(${-230 + distance}px)`;
     }
   };
@@ -26,9 +32,6 @@ function List() {
           onClick={() => handleClick("left")}
         />
         <div className="container" ref={listRef}>
-          <ListItem />
-          <ListItem />
-          <ListItem />
           <ListItem />
           <ListItem />
           <ListItem />
