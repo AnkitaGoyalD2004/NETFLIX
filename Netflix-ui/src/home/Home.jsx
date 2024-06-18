@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="home">
       <Navbar />
-      <Featured type="Series" />
+      <Featured />
       <List />
       <List />
       <List />
