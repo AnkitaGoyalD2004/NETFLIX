@@ -6,11 +6,12 @@ import { AiOutlineDislike } from "react-icons/ai";
 
 import HarryPotter from "../../assets/HarryPotter.jpeg";
 import { useState } from "react";
-function listItem() {
+function listItem(index) {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
       className="listItems"
+      style={{ left: isHovered && index * 225 - 50 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
