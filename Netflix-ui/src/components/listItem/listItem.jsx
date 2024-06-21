@@ -1,7 +1,7 @@
 import "./listItem.scss";
 import { FaPlay } from "react-icons/fa6";
 import { IoMdAdd } from "react-icons/io";
-import Video from "../../assets/Video.mp4";
+import Video1s from "../../assets/Video.mp4";
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
 import HarryPotter from "../../assets/HarryPotter.jpeg";
@@ -18,7 +18,7 @@ function listItem({ index }) {
       <img src={HarryPotter} alt="" />
       {isHovered && (
         <>
-          <video src={Video} autoPlay={true} loop />
+          <video src={Video1} autoPlay={true} loop />
           <div className="itemInfo">
             <div className="icons">
               <FaPlay className="icon" />
