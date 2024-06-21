@@ -1,16 +1,16 @@
 import "./listItem.scss";
 import { FaPlay } from "react-icons/fa6";
 import { IoMdAdd } from "react-icons/io";
+import Video from "../../assets/Video.mp4";
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
-import Video from "../../assets/Video.mp4";
 import HarryPotter from "../../assets/HarryPotter.jpeg";
 import { useState } from "react";
-function listItem(index) {
+function listItem({ index }) {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      className="listItems"
+      className="listItem"
       style={{ left: isHovered && index * 225 - 50 + index * 2.5 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -21,10 +21,10 @@ function listItem(index) {
           <video src={Video} autoPlay={true} loop />
           <div className="itemInfo">
             <div className="icons">
-              <FaPlay />
-              <IoMdAdd />
-              <AiOutlineLike />
-              <AiOutlineDislike />
+              <FaPlay className="icon" />
+              <IoMdAdd className="icon" />
+              <AiOutlineLike className="icon" />
+              <AiOutlineDislike className="icon" />
             </div>
             <div className="itemInfoTop">
               <span>1 hour 14 mins</span>
@@ -32,8 +32,8 @@ function listItem(index) {
               <span>1999</span>
             </div>
             <div className="desc">
-              It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Praesentium hic rem eveniet error possimus, neque ex doloribus.
             </div>
             <div className="genre">Action</div>
           </div>
