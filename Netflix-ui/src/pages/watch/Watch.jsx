@@ -2,7 +2,7 @@ import "./watch.scss";
 import { IoArrowBackSharp } from "react-icons/io5";
 import Video1 from "../../assets/Video.mp4";
 
-function watch() {
+function Watch() {
   return (
     <div className="watch">
       <div className="back">
