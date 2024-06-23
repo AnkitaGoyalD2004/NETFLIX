@@ -1,6 +1,10 @@
 import "./register.scss";
 import Netflix from "../../assets/NetflixLogo.png";
+
+import { useRef, useState } from "react";
 function Register() {
+  const [email, setEmail] = useState("");
+  const emailRef = useRef();
   return (
     <div className="register">
       <div className="top">
@@ -16,7 +20,7 @@ function Register() {
           Ready to watch? Enter your email to create or restart yur membership
         </p>
         <div className="input">
-          <input type="email" placeholder="email address" />
+          <input type="email" placeholder="email address" ref={emailRef} />
           <button className="registerButton">Get Started</button>
         </div>
       </div>
