@@ -1,7 +1,7 @@
 import "./listItem.scss";
 import { FaPlay } from "react-icons/fa6";
 import { IoMdAdd } from "react-icons/io";
-import Video1s from "../../assets/Video.mp4";
+import Video1 from "../../assets/Video.mp4";
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
 import HarryPotter from "../../assets/HarryPotter.jpeg";
