@@ -73,7 +73,9 @@ router.post("/login", async (req, res) => {
     originalPassword !== req.body.password &&
       res.status(401).json("wrong password or username");
 
-    res.status(200).json(user);
+    const { password, ...info } = user._doc;
+
+    res.status(200).json(info);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
