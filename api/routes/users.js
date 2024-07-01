@@ -43,6 +43,7 @@ router.delete("/:id", verify, async (req, res) => {
     res.status(403).json("You can delete only your account!");
   }
 });
+
 //Get
 
 router.get("/find/:id", async (req, res) => {
@@ -70,6 +71,32 @@ router.get("/", verify, async (req, res) => {
     }
   } else {
     res.status(403).json("you are not allowed to see all users");
+  }
+});
+
+//Get user stats
+router.get("/stats", async (req, res) => {
+  const today = new Date();
+  const latYear = today.setFullYear(today.setFullYear() - 1);
+
+  try {
+    //mongoDB Aggregation
+    const data = await User.aggregate([
+      {
+        $project: {
+          month: { $month: "$createdAt" },
+        },
+      },
+      {
+        $group: {
+          _id: "$month",
+          total: { $sum: 1 },
+        },
+      },
+    ]);
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
