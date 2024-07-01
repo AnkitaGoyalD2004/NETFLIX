@@ -28,6 +28,7 @@ function verify(req, res, next) {
       next();
     });
   } else {
+    console.log(err);
     return res.status(401).json("You are not authenticated");
   }
 }
