@@ -5,7 +5,7 @@ import Register from "./pages/register/Register.jsx";
 import Watch from "./pages/watch/Watch.jsx";
 
 const App = () => {
-  return <Login />;
+  return <Register />;
 };
 
 export default App;
