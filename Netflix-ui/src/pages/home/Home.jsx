@@ -16,8 +16,7 @@ function Home({ type }) {
           `lists${type ? "?type=" + type : ""}${genre ? "&genre" + genre : ""}`,
           {
             headers: {
-              token:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODIzMmM4OGQxMTU4NmY2NDNhMWFkMCIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MjAyMzUyMjksImV4cCI6MTcyMDY2NzIyOX0.-nOp0nvXgr4y4ONQW8DICGQrT8y-wDIeNsmpGRbwcdo",
+              token: "Bearer",
             },
           }
         );
