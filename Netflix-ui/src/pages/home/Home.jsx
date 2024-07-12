@@ -20,6 +20,7 @@ function Home({ type }) {
             },
           }
         );
+        console.log("API Response:", res.data);
         setLists(res.data);
       } catch (err) {
         console.log(err);
@@ -41,9 +42,11 @@ function Home({ type }) {
       <List />
       <List /> */}
       {/* instead of this list */}
-      {lists.map((list) => (
-        <List list={list} />
-      ))}
+      {Array.isArray(lists) ? (
+        lists.map((list) => <List key={list._id} list={list} />)
+      ) : (
+        <p>No lists available</p>
+      )}
     </div>
   );
 }
