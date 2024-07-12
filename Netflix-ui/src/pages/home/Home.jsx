@@ -16,11 +16,10 @@ function Home({ type }) {
           `lists${type ? "?type=" + type : ""}${genre ? "&genre" + genre : ""}`,
           {
             headers: {
-              token: "Bearer",
             },
           }
         );
-        console.log("API Response:", res.data);
+        // console.log("API Response:", res.data);
         setLists(res.data);
       } catch (err) {
         console.log(err);
@@ -31,23 +30,32 @@ function Home({ type }) {
   return (
     <div className="home">
       <Navbar />
-      <Featured type={type} />
-      {/* <List />
-      <List />
-      <List />
-      <List />
-      <List />
-      <List />
-      <List />
-      <List />
-      <List /> */}
-      {/* instead of this list */}
-      {Array.isArray(lists) ? (
-        lists.map((list) => <List key={list._id} list={list} />)
-      ) : (
-        <p>No lists available</p>
-      )}
+      <Featured type={type} setGenre={setGenre} />
+      {lists.map((list) => (
+        <List list={list}  />
+      ))}
     </div>
+    // <div className="home">
+    //   <Navbar />
+    //   <Featured type={type} />
+    //   {/* <List />
+    //   <List />
+    //   <List />
+    //   <List />
+    //   <List />
+    //   <List />
+    //   <List />
+    //   <List />
+    //   <List /> */}
+    //   {/* instead of this list */}
+
+    //   {/* {lists.length > 0 ? (
+    //     lists.map((list) => <List list={list} key={list.id} />)
+    //   ) : (
+    //     <p>Loading...</p>
+    //   )} */}
+
+    // </div>
   );
 }
 
