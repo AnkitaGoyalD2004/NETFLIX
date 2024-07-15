@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const User = require("../models/User.js");
+const User = require("../models/User");
 const CryptoJS = require("crypto-js");
-const verify = require("../verifyToken.js");
+const verify = require("../verifyToken");
 //UPDATE
 
 router.put("/:id", verify, async (req, res) => {
@@ -59,16 +59,18 @@ router.get("/find/:id", async (req, res) => {
 //GET ALL
 router.get("/", verify, async (req, res) => {
   const query = req.query.new;
+  console.log("Admin status:", req.user.isAdmin); // Log admin status
   if (req.user.isAdmin) {
     try {
       const users = query
-        ? await User.find().sort({ _id: -1 }).limit(5)
+        ? await User.find().sort({ _id: -1 }).limit(3)
         : await User.find();
       res.status(200).json(users);
     } catch (err) {
       res.status(500).json(err);
     }
   } else {
+    console.log("Access denied for non-admin user"); // Log access denial
     res.status(403).json("You are not allowed to see all users!");
   }
 });
@@ -78,6 +80,20 @@ router.get("/stats", async (req, res) => {
   const today = new Date();
   const latYear = today.setFullYear(today.setFullYear() - 1);
 
+  const monthArray = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   try {
     const data = await User.aggregate([
       {
