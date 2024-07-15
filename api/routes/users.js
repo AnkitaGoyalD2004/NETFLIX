@@ -58,6 +58,7 @@ router.get("/find/:id", async (req, res) => {
 
 //GET ALL
 router.get("/", verify, async (req, res) => {
+  //  req.query is an object that is part of the request (req) object. It is not a function but a built-in feature provided by Express.js to handle query parameters in the URL.
   const query = req.query.new;
   console.log("Admin status:", req.user.isAdmin); // Log admin status
   if (req.user.isAdmin) {

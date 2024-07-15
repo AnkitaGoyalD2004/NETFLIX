@@ -22,7 +22,7 @@ app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/movies", movieRoute);
-app.use("/api/list", listRoute);
+app.use("/api/lists", listRoute);
 
 // Start the server
 const PORT = process.env.PORT || 8200;
